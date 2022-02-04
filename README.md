@@ -19,18 +19,21 @@ This app contains the ones that may be direct children of the `<body>` tag, and 
 - `<script>`
 - `<template>`
 
-The following ones can't be direct children of body :
+The following ones can't be direct children of `<body>`, but can be inside `<body>`:
+
+- `<col>` and `<colgroup>`: can only be used in a `<table>`
+- `<param>`: has to be direct child of `<object>`
+- `<slot>`: has to be used in phrasing content whereas `<body>` has flow content
+- `<source>`: has to be a direct child of `<picture>` or a media element
+- `<style>`: has to be in the `<head>` or in a meta context
+- `<track>`: has to be a child of a media element
+
+The following ones can't be inside `<body>`:
 
 - `<base>`: can only be used in `<head>`
-- `<col>` and `<colgroup>`: can only be used in a `<table>`, so can't be direct child of `<body>`
-- `<head>`: can't be direct child of `<body>`
-- `<html>`: can't be direct child of `<body>`
-- `<param>`: has to be direct child of `<object>`, so can't be direct child of `<body>`
-- `<slot>`: has to be used in phrasing content, so can't be direct child of `<body>` that has flow content
-- `<source>`: has to be a direct child of `<picture>` or a media element, so can't be direct child of `<body>`
-- `<style>`: has to be in the `<head>` or in a meta contaxt, so can't be direct child of `<body>`
-- `<title>`: has to be a direct child of `<head>`, so can't be direct child of `<body>`
-- `<track>`: has to be a child of a media element, so can't be direct child of `<body>`
+- `<head>`: sibling of `<body>`
+- `<html>`: parent of `<body>`
+- `<title>`: has to be a direct child of `<head>`
 
 ## Currently errors with the validator
 
